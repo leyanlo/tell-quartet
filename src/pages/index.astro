@@ -45,13 +45,15 @@ const members = [
 		<meta name="twitter:card" content="summary" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Tell Quartet — Four Voices, One Story</title>
+		<link rel="icon" type="image/svg+xml" href="/images/tell-monogram.svg" />
+		<link rel="apple-touch-icon" href="/images/tell-monogram-preview.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="site-header wrap">
-			<a class="logo" href="#top" aria-label="Tell Quartet, home"><span class="cross" aria-hidden="true"></span><span>Tell<br />Quartet</span></a>
+			<a class="logo" href="#top" aria-label="Tell Quartet, home"><img class="logo-mark" src="/images/tell-monogram.svg" alt="" /><span>Tell<br />Quartet</span></a>
 			<nav aria-label="Main navigation">
 				<a href="#about">About</a>
 				<a href="#players">Players</a>
@@ -164,7 +166,7 @@ const members = [
 		</main>
 
 		<footer class="wrap">
-			<a class="logo" href="#top"><span class="cross" aria-hidden="true"></span><span>Tell<br />Quartet</span></a>
+			<a class="logo" href="#top" aria-label="Tell Quartet, home"><img class="logo-mark" src="/images/tell-monogram.svg" alt="" /><span>Tell<br />Quartet</span></a>
 			<p>Four voices · One story</p>
 			<p>© {new Date().getFullYear()} Tell Quartet</p>
 		</footer>
@@ -180,7 +182,7 @@ const members = [
 	.wrap{width:min(1440px,calc(100% - 72px));margin-inline:auto}
 	.site-header{height:104px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;border-bottom:1px solid rgba(242,238,226,.42);position:absolute;left:50%;transform:translateX(-50%);z-index:5;color:var(--cream)}
 	.logo{display:flex;align-items:center;gap:14px;font-size:12px;line-height:1.05;font-weight:600;text-transform:uppercase;letter-spacing:.05em;width:max-content}
-	.cross{width:27px;height:27px;background:currentColor;position:relative;display:block;clip-path:polygon(38% 0,62% 0,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0 62%,0 38%,38% 38%)}
+	.logo-mark{display:block;width:38px;height:38px;flex:none}
 	nav{justify-self:center;display:flex;gap:34px;font-size:11px;text-transform:uppercase;letter-spacing:.11em}
 	nav a{position:relative}nav a::after{content:"";position:absolute;height:1px;background:currentColor;left:0;right:100%;bottom:-4px;transition:.25s}nav a:hover::after{right:0}
 	.location{justify-self:end;font-size:10px;line-height:1.25;text-align:right;text-transform:uppercase;letter-spacing:.12em}
