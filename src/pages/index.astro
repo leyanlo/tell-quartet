@@ -1,9 +1,33 @@
 ---
-const chairs = [
-	{ number: '01', role: 'Violin I', note: 'Player profile forthcoming' },
-	{ number: '02', role: 'Violin II', note: 'Player profile forthcoming' },
-	{ number: '03', role: 'Viola', note: 'Player profile forthcoming' },
-	{ number: '04', role: 'Cello', note: 'Player profile forthcoming' },
+const members = [
+	{
+		number: '01',
+		name: 'Lynn Gerber',
+		initials: 'LG',
+		bio: 'A Bay Area violinist and concertmaster of the Stanford Medicine Orchestra, Lynn studied at the San Francisco Conservatory of Music and with Geoff Nuttall. Away from the stand, she is an anesthesiologist and clinical instructor.',
+		profile: 'https://med.stanford.edu/medicineandthemuse/events/StanfordMedicineMusicNetwork/orchestra.html',
+	},
+	{
+		number: '02',
+		name: 'Leyan Lo',
+		initials: 'LL',
+		bio: 'An avid violinist who is happiest playing chamber music with friends, Leyan has performed widely at the St. Lawrence String Quartet Chamber Music Seminar. His other lives are in technology and speedcubing.',
+		profile: 'https://www.leyanlo.com/violin/',
+	},
+	{
+		number: '03',
+		name: 'Tyson Mao',
+		initials: 'TM',
+		bio: 'A violinist and pianist with roots in the California Youth Symphony and Caltech ensembles, Tyson now serves as president of the CYS board. Beyond music, he is a technologist, entrepreneur, and speedcubing pioneer.',
+		profile: 'https://www.cys.org/about/board.html',
+	},
+	{
+		number: '04',
+		name: 'Eric Kim',
+		initials: 'EK',
+		bio: 'A cellist and former member of the Yale Cellos, Eric brings a lifelong musical perspective to the quartet. Outside music, he is the co-founder and managing partner of Goodwater Capital.',
+		profile: 'https://www.goodwatercap.com/team/eric-kim/',
+	},
 ];
 ---
 
@@ -68,16 +92,21 @@ const chairs = [
 				<div class="players-head">
 					<p class="kicker"><span>02</span> The players</p>
 					<h2 id="players-title">Four parts,<br /><em>fully present.</em></h2>
-					<p>Names and portraits will join the quartet as the ensemble takes shape.</p>
+					<p>Four Bay Area musicians, each with a life beyond rehearsal and a shared appetite for close listening.</p>
 				</div>
 				<div class="chair-grid">
-					{chairs.map((chair) => (
+					{members.map((member) => (
 						<article class="chair">
-							<div class="chair-portrait" aria-label={`${chair.role} player photo placeholder`}>
-								<span>{chair.number}</span>
+							<div class="chair-portrait" aria-label={`Photo placeholder for ${member.name}`}>
+								<span>{member.initials}</span>
 								<div class="bow" aria-hidden="true"></div>
 							</div>
-							<div class="chair-info"><h3>{chair.role}</h3><p>{chair.note}</p></div>
+							<div class="chair-info">
+								<p class="member-number">{member.number}</p>
+								<h3>{member.name}</h3>
+								<p class="member-bio">{member.bio}</p>
+								<a href={member.profile} target="_blank" rel="noreferrer">Public profile <span aria-hidden="true">↗</span></a>
+							</div>
 						</article>
 					))}
 				</div>
@@ -164,7 +193,7 @@ const chairs = [
 	.chair-portrait span{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(90px,10vw,150px);color:#bbb4a7;letter-spacing:-.06em}
 	.bow{height:140%;width:1px;background:var(--red);position:absolute;transform:rotate(32deg)}
 	.chair:nth-child(even) .chair-portrait{background:var(--ink)}.chair:nth-child(even) .chair-portrait span{color:#333}.chair:nth-child(even) .chair-portrait::before{border-color:#484848}
-	.chair-info{display:flex;justify-content:space-between;gap:15px;padding-top:15px}.chair h3{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;margin:0}.chair p{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--quiet);margin:5px 0 0;text-align:right}
+	.chair-info{display:grid;grid-template-columns:34px 1fr;padding-top:15px}.chair h3{font-family:'Instrument Serif',serif;font-size:30px;line-height:1;font-weight:400;margin:0}.chair .member-number{font-size:9px;letter-spacing:.1em;color:var(--red);margin:5px 0 0}.chair .member-bio{grid-column:2;font-size:12px;line-height:1.55;color:var(--quiet);margin:17px 0 20px}.chair-info a{grid-column:2;width:max-content;font-size:9px;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid var(--line);padding-bottom:4px}.chair-info a:hover{color:var(--red);border-color:var(--red)}
 	.program{background:var(--ink);color:var(--cream);padding:145px 0}.kicker.light span{color:#777}
 	.program h2 em{color:var(--red)}.program ul{list-style:none;padding:0;margin:90px 0 0}.program li{border-top:1px solid #444;display:grid;grid-template-columns:80px 1fr 1fr;align-items:center;padding:24px 0}.program li:last-child{border-bottom:1px solid #444}.program li span{font-size:10px;color:#777}.program strong{font-family:'Instrument Serif',serif;font-weight:400;font-size:32px}.program li i{font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#999;justify-self:end}
 	.contact{padding:150px 0 120px}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12%;margin-top:75px}.contact-grid>div>p{max-width:360px;margin:40px 0 0;color:var(--quiet)}
