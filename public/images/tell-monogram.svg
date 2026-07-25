@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Tell Quartet monogram</title>
+  <desc id="desc">The letters T E L L arranged in a two-by-two square.</desc>
+  <rect width="512" height="512" fill="#e32b20" />
+  <g fill="#f2eee2">
+    <path d="M72 63H232V89H165V232H139V89H72Z" />
+    <path d="M267 63H440V89H293V134H420V160H293V206H440V232H267Z" />
+    <path d="M72 280H98V410H232V436H72Z" />
+    <path d="M267 280H293V410H440V436H267Z" />
+  </g>
+</svg>
