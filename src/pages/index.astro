@@ -61,14 +61,16 @@ const members = [
 		</header>
 
 		<main id="top">
-			<section class="hero wrap" aria-labelledby="hero-title">
-				<div class="hero-meta"><span>String Quartet</span><span>California · 2026</span></div>
-				<h1 id="hero-title">TELL<span class="dot">.</span></h1>
-				<div class="hero-foot">
-					<p>Four voices.<br />One story.</p>
-					<a href="#about" class="arrow-link"><span>Begin listening</span><i aria-hidden="true">↓</i></a>
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero-inner wrap">
+					<div class="hero-meta"><span>String Quartet</span><span>California · 2026</span></div>
+					<h1 id="hero-title">TELL<span class="dot">.</span></h1>
+					<div class="hero-foot">
+						<p>Four voices.<br />One story.</p>
+						<a href="#about" class="arrow-link"><span>Begin listening</span><i aria-hidden="true">↓</i></a>
+					</div>
+					<div class="target" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
 				</div>
-				<div class="target" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
 			</section>
 
 			<section class="manifesto" id="about" aria-labelledby="about-title">
@@ -182,8 +184,9 @@ const members = [
 	nav{justify-self:center;display:flex;gap:34px;font-size:11px;text-transform:uppercase;letter-spacing:.11em}
 	nav a{position:relative}nav a::after{content:"";position:absolute;height:1px;background:currentColor;left:0;right:100%;bottom:-4px;transition:.25s}nav a:hover::after{right:0}
 	.location{justify-self:end;font-size:10px;line-height:1.25;text-align:right;text-transform:uppercase;letter-spacing:.12em}
-	.hero{height:max(720px,100svh);background:var(--red);color:var(--cream);position:relative;padding:145px 0 55px;overflow:hidden}
+	.hero{height:max(720px,100svh);background:var(--red);color:var(--cream);position:relative;overflow:hidden}
 	.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent calc(25% - 1px),rgba(242,238,226,.15) 25%,transparent calc(25% + 1px),transparent calc(50% - 1px),rgba(242,238,226,.15) 50%,transparent calc(50% + 1px),transparent calc(75% - 1px),rgba(242,238,226,.15) 75%,transparent calc(75% + 1px))}
+	.hero-inner{height:100%;position:relative;padding:145px 0 55px}
 	.hero-meta{display:flex;justify-content:space-between;font-size:10px;text-transform:uppercase;letter-spacing:.18em;position:relative;z-index:2}
 	.hero h1{font-size:clamp(150px,27vw,430px);line-height:.68;letter-spacing:-.095em;margin:23vh 0 0 -18px;font-weight:600;position:relative;z-index:2}
 	.dot{font-family:'Instrument Serif',serif;font-weight:400}
@@ -212,7 +215,7 @@ const members = [
 	.contact{padding:150px 0 120px}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12%;margin-top:75px}.contact-grid>div>p{max-width:360px;margin:40px 0 0;color:var(--quiet)}
 	form{display:flex;flex-direction:column;gap:22px;padding-top:8px}form label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--quiet)}input,textarea{font:16px 'Space Grotesk',sans-serif;width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;outline:none;resize:vertical}input:focus,textarea:focus{border-color:var(--red);box-shadow:0 1px var(--red)}button{border:0;background:var(--red);color:var(--cream);padding:19px 20px;text-transform:uppercase;letter-spacing:.13em;font:10px 'Space Grotesk',sans-serif;display:flex;justify-content:space-between;cursor:pointer;margin-top:8px;transition:.2s}button:hover{background:var(--ink)}.hidden{position:absolute;left:-9999px}
 	footer{border-top:1px solid var(--ink);padding:28px 0 44px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.11em}footer p{margin:0}footer p:nth-child(2){text-align:center}footer p:last-child{text-align:right}
-	@media(max-width:900px){.wrap{width:min(100% - 36px,1440px)}.site-header{height:80px}.site-header nav{display:none}.site-header{grid-template-columns:1fr 1fr}.hero{padding-top:115px}.hero h1{font-size:30vw;margin-top:31vh}.target{width:55vw;right:4%;top:22%}.section-grid{grid-template-columns:1fr}.manifesto{padding:95px 0}.manifesto .kicker{margin-bottom:55px}.columns{padding-left:0;margin-top:55px}.rehearsal{padding-top:95px}.rehearsal-head{grid-template-columns:1fr;margin-bottom:55px}.rehearsal-head h2{margin-top:50px}.players{padding:95px 0}.players-head{grid-template-columns:1fr}.players-head h2{margin:50px 0 30px}.chair-grid{grid-template-columns:1fr 1fr;gap:50px 16px}.program{padding:95px 0}.program .kicker{margin-bottom:55px}.contact{padding:95px 0}.contact-grid{grid-template-columns:1fr;gap:70px;margin-top:55px}}
+	@media(max-width:900px){.wrap{width:min(100% - 36px,1440px)}.site-header{height:80px}.site-header nav{display:none}.site-header{grid-template-columns:1fr 1fr}.hero-inner{padding-top:115px}.hero h1{font-size:30vw;margin-top:31vh}.target{width:55vw;right:4%;top:22%}.section-grid{grid-template-columns:1fr}.manifesto{padding:95px 0}.manifesto .kicker{margin-bottom:55px}.columns{padding-left:0;margin-top:55px}.rehearsal{padding-top:95px}.rehearsal-head{grid-template-columns:1fr;margin-bottom:55px}.rehearsal-head h2{margin-top:50px}.players{padding:95px 0}.players-head{grid-template-columns:1fr}.players-head h2{margin:50px 0 30px}.chair-grid{grid-template-columns:1fr 1fr;gap:50px 16px}.program{padding:95px 0}.program .kicker{margin-bottom:55px}.contact{padding:95px 0}.contact-grid{grid-template-columns:1fr;gap:70px;margin-top:55px}}
 	@media(max-width:560px){.hero h1{font-size:29vw;margin-top:36vh}.hero-foot>p{font-size:23px}.arrow-link{width:170px;gap:15px}.target{top:25%;width:68vw}.columns{grid-template-columns:1fr;gap:30px}.rehearsal-grid{gap:45px}.chair-grid{grid-template-columns:1fr}.chair-portrait{aspect-ratio:4/4.7}.program li{grid-template-columns:42px 1fr}.program li i{display:none}.program strong{font-size:25px}footer{grid-template-columns:1fr;gap:18px}footer p:nth-child(2),footer p:last-child{text-align:left}}
 	@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.motto-track{animation:none}}
 </style>
