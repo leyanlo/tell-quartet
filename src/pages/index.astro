@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import rehearsalPhoto from '../assets/images/tell-quartet-in-rehearsal.jpg';
-import afterRehearsalPhoto from '../assets/images/tell-quartet-after-rehearsal.jpg';
+import rehearsalPhoto from '../assets/images/tell-quartet-rehearsal-2026.jpg';
+import performancePhoto from '../assets/images/tell-quartet-performance-2026.jpg';
 import ericPhoto from '../assets/images/members/eric-kim.jpg';
 import leyanPhoto from '../assets/images/members/leyan-lo.jpg';
 import lynnPhoto from '../assets/images/members/lynn-gerber.jpg';
@@ -109,17 +109,17 @@ const members = [
 
 			<section class="rehearsal wrap" aria-labelledby="rehearsal-title">
 				<div class="rehearsal-head">
-					<p class="kicker"><span>02</span> In rehearsal</p>
-					<h2 id="rehearsal-title">Where the story<br /><em>takes shape.</em></h2>
+					<p class="kicker"><span>02</span> Rehearsal &amp; performance</p>
+					<h2 id="rehearsal-title">Where the story<br /><em>comes alive.</em></h2>
 				</div>
 				<div class="rehearsal-grid">
 					<figure>
-						<Image src={rehearsalPhoto} widths={[360, 480, 640, 750, 960, 1280, 1650]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Friends rehearsing chamber music together with strings and music stands" loading="lazy" />
-						<figcaption><span>On the stand</span><span>Bay Area · 2026</span></figcaption>
+						<Image src={rehearsalPhoto} widths={[360, 480, 640, 750, 960, 1280, 1448]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Tell Quartet rehearsing together with strings and music stands" loading="lazy" />
+						<figcaption><span>In rehearsal</span><span>Tell Quartet</span></figcaption>
 					</figure>
 					<figure>
-						<Image src={afterRehearsalPhoto} widths={[360, 480, 640, 750, 960, 1280, 1650]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Six chamber musicians smiling together after rehearsal" loading="lazy" />
-						<figcaption><span>After rehearsal</span><span>Goodwater Collective</span></figcaption>
+						<Image src={performancePhoto} widths={[360, 480, 640, 750, 960, 1280, 1448]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Tell Quartet performing together before an audience" loading="lazy" />
+						<figcaption><span>In performance</span><span>Tell Quartet</span></figcaption>
 					</figure>
 				</div>
 			</section>
