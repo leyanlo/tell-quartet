@@ -1,30 +1,38 @@
 ---
+import { Image } from 'astro:assets';
+import rehearsalPhoto from '../assets/images/tell-quartet-in-rehearsal.jpg';
+import afterRehearsalPhoto from '../assets/images/tell-quartet-after-rehearsal.jpg';
+import ericPhoto from '../assets/images/members/eric-kim.jpg';
+import leyanPhoto from '../assets/images/members/leyan-lo.jpg';
+import lynnPhoto from '../assets/images/members/lynn-gerber.jpg';
+import tysonPhoto from '../assets/images/members/tyson-mao.jpg';
+
 const members = [
 	{
 		number: '01',
 		name: 'Lynn Gerber',
-		photo: '/images/members/lynn-gerber.jpg',
+		photo: lynnPhoto,
 		bio: 'A Bay Area violinist and concertmaster of the Stanford Medicine Orchestra, Lynn studied at the San Francisco Conservatory of Music and with Geoff Nuttall. Away from the stand, she is an anesthesiologist and clinical instructor.',
 		profile: 'https://med.stanford.edu/medicineandthemuse/events/StanfordMedicineMusicNetwork/orchestra.html',
 	},
 	{
 		number: '02',
 		name: 'Leyan Lo',
-		photo: '/images/members/leyan-lo.jpg',
+		photo: leyanPhoto,
 		bio: 'An avid violinist who is happiest playing chamber music with friends, Leyan has performed widely at the St. Lawrence String Quartet Chamber Music Seminar. His other lives are in technology and speedcubing.',
 		profile: 'https://www.leyanlo.com/violin/',
 	},
 	{
 		number: '03',
 		name: 'Tyson Mao',
-		photo: '/images/members/tyson-mao.jpg',
+		photo: tysonPhoto,
 		bio: 'A violinist and pianist with roots in the California Youth Symphony and Caltech ensembles, Tyson now serves as president of the CYS board. Beyond music, he is a technologist, entrepreneur, and speedcubing pioneer.',
 		profile: 'https://www.cys.org/about/board.html',
 	},
 	{
 		number: '04',
 		name: 'Eric Kim',
-		photo: '/images/members/eric-kim.jpg',
+		photo: ericPhoto,
 		bio: 'A cellist and former member of the Yale Cellos, Eric brings a lifelong musical perspective to the quartet. Outside music, he is the co-founder and managing partner of Goodwater Capital.',
 		profile: 'https://www.goodwatercap.com/team/eric-kim/',
 	},
@@ -106,11 +114,11 @@ const members = [
 				</div>
 				<div class="rehearsal-grid">
 					<figure>
-						<img src="/images/tell-quartet-in-rehearsal.jpg" width="1650" height="1350" alt="Friends rehearsing chamber music together with strings and music stands" loading="lazy" />
+						<Image src={rehearsalPhoto} widths={[360, 480, 640, 750, 960, 1280, 1650]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Friends rehearsing chamber music together with strings and music stands" loading="lazy" />
 						<figcaption><span>On the stand</span><span>Bay Area · 2026</span></figcaption>
 					</figure>
 					<figure>
-						<img src="/images/tell-quartet-after-rehearsal.jpg" width="1650" height="1230" alt="Six chamber musicians smiling together after rehearsal" loading="lazy" />
+						<Image src={afterRehearsalPhoto} widths={[360, 480, 640, 750, 960, 1280, 1650]} sizes="(max-width: 560px) calc(100vw - 36px), (min-width: 1476px) 696px, 48vw" format="webp" alt="Six chamber musicians smiling together after rehearsal" loading="lazy" />
 						<figcaption><span>After rehearsal</span><span>Goodwater Collective</span></figcaption>
 					</figure>
 				</div>
@@ -126,7 +134,7 @@ const members = [
 					{members.map((member) => (
 						<article class="chair">
 							<div class="chair-portrait">
-								<img src={member.photo} width="675" height="900" alt={`${member.name}, Tell Quartet`} loading="lazy" />
+								<Image src={member.photo} widths={[320, 480, 675]} sizes="(max-width: 560px) calc(100vw - 36px), (max-width: 900px) calc((100vw - 52px) / 2), (min-width: 1512px) 348px, calc((100vw - 120px) / 4)" format="webp" alt={`${member.name}, Tell Quartet`} loading="lazy" />
 							</div>
 							<div class="chair-info">
 								<p class="member-number">{member.number}</p>
