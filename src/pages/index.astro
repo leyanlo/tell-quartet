@@ -169,6 +169,7 @@ const members = [
 						<p>Performance ideas, collaborations, and friendly hellos are all welcome.</p>
 					</div>
 					<form name="contact" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+						<p class="form-confirmation" data-form-confirmation role="status" tabindex="-1" hidden>Message sent. Thank you—we’ll be in touch soon.</p>
 						<input type="hidden" name="form-name" value="contact" />
 						<p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
 						<label>Name<input type="text" name="name" autocomplete="name" required /></label>
@@ -179,6 +180,17 @@ const members = [
 				</div>
 			</section>
 		</main>
+
+		<script>
+			const confirmation = document.querySelector('[data-form-confirmation]');
+			const params = new URLSearchParams(window.location.search);
+
+			if (confirmation instanceof HTMLElement && params.get('message') === 'sent') {
+				confirmation.hidden = false;
+				confirmation.focus();
+				window.history.replaceState({}, '', `${window.location.pathname}${window.location.hash}`);
+			}
+		</script>
 
 		<footer class="wrap">
 			<a class="logo" href="#top" aria-label="Tell Quartet, home"><img class="logo-mark" src="/images/tell-monogram.svg" alt="" /><span>Tell<br />Quartet</span></a>
@@ -230,7 +242,7 @@ const members = [
 	.program{background:var(--ink);color:var(--cream);padding:145px 0}.kicker.light span{color:#777}
 	.program h2 em{color:var(--red)}.program ul{list-style:none;padding:0;margin:90px 0 0}.program li{border-top:1px solid #444;display:grid;grid-template-columns:80px 1fr 1fr;align-items:center;padding:24px 0}.program li:last-child{border-bottom:1px solid #444}.program li span{font-size:10px;color:#777}.program strong{font-family:'Instrument Serif',serif;font-weight:400;font-size:32px}.program li i{font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#999;justify-self:end}
 	.contact{padding:150px 0 120px}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12%;margin-top:75px}.contact-grid>div>p{max-width:360px;margin:40px 0 0;color:var(--quiet)}
-	form{display:flex;flex-direction:column;gap:22px;padding-top:8px}form label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--quiet)}input,textarea{font:16px 'Space Grotesk',sans-serif;width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;outline:none;resize:vertical}input:focus,textarea:focus{border-color:var(--red);box-shadow:0 1px var(--red)}button{border:0;background:var(--red);color:var(--cream);padding:19px 20px;text-transform:uppercase;letter-spacing:.13em;font:10px 'Space Grotesk',sans-serif;display:flex;justify-content:space-between;cursor:pointer;margin-top:8px;transition:.2s}button:hover{background:var(--ink)}.hidden{position:absolute;left:-9999px}
+	form{display:flex;flex-direction:column;gap:22px;padding-top:8px}.form-confirmation{border-top:1px solid var(--red);color:var(--red);font-size:13px;margin:0;padding:12px 0 0;outline:none}form label{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--quiet)}input,textarea{font:16px 'Space Grotesk',sans-serif;width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:10px 0;border-radius:0;outline:none;resize:vertical}input:focus,textarea:focus{border-color:var(--red);box-shadow:0 1px var(--red)}button{border:0;background:var(--red);color:var(--cream);padding:19px 20px;text-transform:uppercase;letter-spacing:.13em;font:10px 'Space Grotesk',sans-serif;display:flex;justify-content:space-between;cursor:pointer;margin-top:8px;transition:.2s}button:hover{background:var(--ink)}.hidden{position:absolute;left:-9999px}
 	footer{border-top:1px solid var(--ink);padding:28px 0 44px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;font-size:9px;text-transform:uppercase;letter-spacing:.11em}footer p{margin:0}footer p:nth-child(2){text-align:center}footer p:last-child{text-align:right}
 	@media(max-width:900px){.wrap{width:min(100% - 36px,1440px)}.site-header{height:80px}.site-header nav{display:none}.site-header{grid-template-columns:1fr 1fr}.hero-inner{padding-top:115px}.hero h1{font-size:30vw;margin-top:31vh}.target{width:55vw;right:4%;top:22%}.section-grid{grid-template-columns:1fr}.manifesto{padding:95px 0}.manifesto .kicker{margin-bottom:55px}.columns{padding-left:0;margin-top:55px}.rehearsal{padding-top:95px}.rehearsal-head{grid-template-columns:1fr;margin-bottom:55px}.rehearsal-head h2{margin-top:50px}.players{padding:95px 0}.players-head{grid-template-columns:1fr}.players-head h2{margin:50px 0 30px}.chair-grid{grid-template-columns:1fr 1fr;gap:50px 16px}.program{padding:95px 0}.program .kicker{margin-bottom:55px}.contact{padding:95px 0}.contact-grid{grid-template-columns:1fr;gap:70px;margin-top:55px}}
 	@media(max-width:560px){.hero h1{font-size:29vw;margin-top:36vh}.hero-foot>p{font-size:23px}.arrow-link{width:170px;gap:15px}.target{top:25%;width:68vw}.columns{grid-template-columns:1fr;gap:30px}.rehearsal-grid{grid-template-columns:1fr;gap:45px}.rehearsal img{height:auto;aspect-ratio:auto;object-fit:contain;object-position:center}.chair-grid{grid-template-columns:1fr}.chair-portrait{aspect-ratio:1}.program li{grid-template-columns:42px 1fr}.program li i{display:none}.program strong{font-size:25px}footer{grid-template-columns:1fr;gap:18px}footer p:nth-child(2),footer p:last-child{text-align:left}}
